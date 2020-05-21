@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="59986e82-9d23-4f74-9541-f07c22e39708" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="59986e82-9d23-4f74-9541-f07c22e39708fileName">TestCase1</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="AddPet" id="b8584b27-03a7-48bd-9702-4f526f791a79">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet" methodName="addPet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="AddPet" id="c950118c-ace9-4f61-9b62-99874bbfb04b" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request>{\r
+   "id" : 0,\r
+   "category" : {\r
+      "id" : 0,\r
+      "name" : "string"\r
+   },\r
+   "name" : "cat",\r
+   "photoUrls" : [\r
+      "string"\r
+   ],\r
+   "tags" : [\r
+      {\r
+         "id" : 0,\r
+         "name" : "string"\r
+      }\r
+   ],\r
+   "status" : "available"\r
+}</con:request>
+        <con:originalUri>http://petstore.swagger.io/v2/pet</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="96642c35-c363-4488-9871-17fcbe95d4d8" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="4acd11b3-075d-418b-9f89-fa5148f0c224">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="EditPet" id="98229d5c-a73f-49f7-85c6-17abae5231e3">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet" methodName="updatePet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="EditPet" id="ea9ee036-1dd3-4996-afa5-2c4e9f5ab29e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request>{\r
+   "id" : 0,\r
+   "category" : {\r
+      "id" : "${AddPet#Response#$['id']}",\r
+      "name" : "string"\r
+   },\r
+   "name" : "doggieeee",\r
+   "photoUrls" : [\r
+      "string"\r
+   ],\r
+   "tags" : [\r
+      {\r
+         "id" : 0,\r
+         "name" : "string"\r
+      }\r
+   ],\r
+   "status" : "available"\r
+}</con:request>
+        <con:originalUri>http://petstore.swagger.io/v2/pet</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="df16805b-7afd-4fd3-9a79-0b980cd346be" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="4acd11b3-075d-418b-9f89-fa5148f0c224">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetPet" id="561fd8e9-db5c-46bb-b364-1c18a5f780ef">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet/{petId}" methodName="getPetById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetPet" id="20acf175-a6ba-4be8-9299-45a35fea69c6" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://petstore.swagger.io/v2/pet/1845563262948992225</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a45072df-9c3c-4e6d-b0ef-fe66aab64d5a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="petId" value="${AddPet#Response#$['id']}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="4acd11b3-075d-418b-9f89-fa5148f0c224">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datagen" name="DataGen" id="3c052fcd-4bd0-496a-a973-f0ed5698bbb4">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:property type="Number">
+        <con:configuration>
+          <start>1</start>
+          <end>1000000</end>
+          <step>4</step>
+          <pattern>234</pattern>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>abc</con:name>
+        <con:mode>STEP</con:mode>
+        <con:shared>false</con:shared>
+      </con:property>
+      <con:property type="Script">
+        <con:configuration>
+          <script>//java.util.UUID.randomUUID()
+
+System.currentTimeMillis()</script>
+        </con:configuration>
+        <con:name>temp</con:name>
+        <con:mode>STEP</con:mode>
+        <con:shared>false</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
